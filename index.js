@@ -58,8 +58,8 @@ class Search extends PureComponent {
     /**
      * local variables
      */
-    this.placeholder = this.props.placeholder || 'Search';
-    this.cancelTitle = this.props.cancelTitle || 'Cancel';
+    this.placeholder = this.props.placeholder || '搜索';
+    this.cancelTitle = this.props.cancelTitle || '取消';
     this.autoFocus =  this.props.autoFocus || false;
 
     /**
@@ -277,7 +277,6 @@ class Search extends PureComponent {
             },
             {
               width: this.inputFocusWidthAnimated,
-              [isRtl ? 'paddingRight' : 'paddingLeft']: this.inputFocusPlaceholderAnimated
             },
             this.props.shadowVisible && {
               shadowOffset: {
@@ -320,9 +319,6 @@ class Search extends PureComponent {
                 styles.iconSearchDefault,
                 this.props.tintColorSearch && {
                   tintColor: this.props.tintColorSearch
-                },
-                {
-                  left: this.iconSearchAnimated
                 }
               ]}
             />}
@@ -391,9 +387,9 @@ const getStyles = (inputHeight, isRtl) => {
 
   return {
     container: {
-      backgroundColor: 'grey',
+      backgroundColor: 'white',
       height: containerHeight,
-      flexDirection: isRtl ? 'row-reverse' : 'row',
+      flexDirection: 'row',
       justifyContent: 'flex-start',
       alignItems: 'center',
       padding: 5
@@ -402,8 +398,8 @@ const getStyles = (inputHeight, isRtl) => {
       height: containerHeight - 10,
       paddingTop: 5,
       paddingBottom: 5,
-      [isRtl ? 'paddingRight' : 'paddingLeft']: 20,
-      textAlign: isRtl ? 'right' : 'text',
+      paddingLeft: 25,
+      textAlign: 'left',
       borderColor: '#444',
       backgroundColor: '#f7f7f7',
       borderRadius: 5,
@@ -413,16 +409,17 @@ const getStyles = (inputHeight, isRtl) => {
     iconSearch: {
       flex: 1,
       position: 'absolute',
+      left: 12,
       top: middleHeight - 7,
       height: 14,
-      width: 14
+      width: 14,
     },
     iconSearchDefault: {
       tintColor: 'grey'
     },
     iconDelete: {
       position: 'absolute',
-      [isRtl ? 'right' : 'left']: 70,
+      right: 70,
       top: middleHeight - 7,
       height: 14,
       width: 14
@@ -432,6 +429,7 @@ const getStyles = (inputHeight, isRtl) => {
     },
     cancelButton: {
       justifyContent: 'center',
+      paddingLeft: 10,
       alignItems: isRtl ? 'flex-end' : 'flex-start',
       backgroundColor: 'transparent',
       width: 60,
@@ -439,7 +437,7 @@ const getStyles = (inputHeight, isRtl) => {
     },
     cancelButtonText: {
       fontSize: 14,
-      color: '#fff'
+      color: '#3da3f8'
     }
   };
 }
